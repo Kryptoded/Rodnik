@@ -1,19 +1,16 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+    <PageComponent>
+      <app-header />
+      <MainComponent />
+    </PageComponent>
 </template>
 
 <script setup lang="ts">
 import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
 import { ref } from 'vue';
-
+import PageComponent  from "components/PageComponent.vue";
+import MainComponent from "components/IndexPage/MainComponent.vue";
+import AppHeader from "components/IndexPage/AppHeader.vue";
 const todos = ref<Todo[]>([
   {
     id: 1,
@@ -40,3 +37,7 @@ const meta = ref<Meta>({
   totalCount: 1200
 });
 </script>
+
+<style scoped>
+
+</style>

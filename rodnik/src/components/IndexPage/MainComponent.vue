@@ -166,6 +166,19 @@ onUnmounted(()=>{
     color: white;
     font-weight: 800;
   }
+  .hero-content {
+    animation: slide-up 1.2s cubic-bezier(.19,1,.22,1);
+  }
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   .hero-content span {
     display: block;
   }

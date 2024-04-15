@@ -2,6 +2,7 @@
     <PageComponent>
       <app-header />
       <MainComponent />
+
     </PageComponent>
 </template>
 

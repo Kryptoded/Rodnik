@@ -10,7 +10,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -158,7 +157,6 @@ node_modules
 
 # Quasar core related directories
 .quasar
-/dist
 /quasar.config.*.temporary.compiled*
 
 # Cordova related directories and files

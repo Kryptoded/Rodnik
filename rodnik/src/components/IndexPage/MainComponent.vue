@@ -1,8 +1,8 @@
 <template>
   <section class="layers">
 		<div class="layers__container">
-			<div class="layers__item layer-1" style="background-image: url(src/assets/layer-1.jpg);"></div>
-			<div class="layers__item layer-2" style="background-image: url(src/assets/layer-2.png);"></div>
+			<div class="layers__item layer-1" :style="`background-image: url(${layer1});`"></div>
+			<div class="layers__item layer-2" :style="`background-image: url(${layer2});`"></div>
 			<div class="layers__item layer-3">
 				<div class="hero-content">
 					<h1>
@@ -16,14 +16,18 @@
 			<div class="layers__item layer-4">
 				<canvas class="rain" ref="rain"></canvas>
 			</div>
-			<div class="layers__item layer-5" style="background-image: url(src/assets/layer-5.png);"></div>
-			<div class="layers__item layer-6" style="background-image: url(src/assets/layer-6.png);"></div>
+			<div class="layers__item layer-5" :style="`background-image: url(${layer5});`"></div>
+			<div class="layers__item layer-6" :style="`background-image: url(${layer6});`"></div>
 		</div>
 	</section>
 </template>
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
+import layer1 from "assets/layer-1.jpg"
+import layer2 from "assets/layer-2.jpg";
+import layer5 from "assets/layer-5.jpg";
+import layer6 from "assets/layer-6.jpg";
 
 function parallaxing(e) {
   Object.assign(document.documentElement, {

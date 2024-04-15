@@ -25,9 +25,9 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import layer1 from "assets/layer-1.jpg"
-import layer2 from "assets/layer-2.jpg";
-import layer5 from "assets/layer-5.jpg";
-import layer6 from "assets/layer-6.jpg";
+import layer2 from "assets/layer-2.png";
+import layer5 from "assets/layer-5.png";
+import layer6 from "assets/layer-6.png";
 
 function parallaxing(e) {
   Object.assign(document.documentElement, {

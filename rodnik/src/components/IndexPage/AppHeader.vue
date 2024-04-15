@@ -14,7 +14,13 @@
           name="home"
           icon="home"
           label="Главная"
-          class="q-mt-md"
+          class="first-tab"
+        />
+        <q-tab
+          label="Войти"
+          icon="login"
+          name="login"
+          class="tab-login"
         />
         <q-tab
           name="charter"
@@ -47,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed, watch } from "vue";
+  import { ref, watch } from "vue";
   import MenuIcon from "./MenuIcon.vue";
 
   const test = ref(null);
@@ -75,6 +81,12 @@
   right: 0;
   width: 100vw;
   z-index: 99;
+}
+
+.tab-login {
+  position: fixed;
+  top: 2px;
+  right: 10px;
 }
 
 .tabs-wrapper {
@@ -108,6 +120,14 @@
     padding: 10px;
     flex-wrap: nowrap;
     max-height: 50px;
+  }
+  .first-tab {
+    margin-top: 16px;
+  }
+  .tab-login {
+    position: relative;
+    top: unset;
+    right: unset;
   }
 }
 

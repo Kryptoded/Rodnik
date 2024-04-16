@@ -8,7 +8,7 @@
 					<h1>
             СНТ
             <span>
-              Родник
+              "Родник"
             </span>
           </h1>
 				</div>
@@ -165,6 +165,7 @@ onUnmounted(()=>{
     margin-top: calc(var(--index) * 5.5);
     color: white;
     font-weight: 800;
+    font-family: lighthaus;
   }
   .hero-content {
     animation: slide-up 1.2s cubic-bezier(.19,1,.22,1);

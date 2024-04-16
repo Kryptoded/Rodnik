@@ -1,1 +1,6 @@
 /*# sourceMappingURL=app.css.map */
+
+@font-face {
+  font-family: lighthaus;
+  src: url('../assets/lighthaus.otf');
+}

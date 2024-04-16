@@ -2,7 +2,7 @@
     <PageComponent>
       <app-header />
       <MainComponent />
-
+      <SliderSection />
     </PageComponent>
 </template>
 
@@ -12,6 +12,7 @@ import { ref } from 'vue';
 import PageComponent  from "components/PageComponent.vue";
 import MainComponent from "components/IndexPage/MainComponent.vue";
 import AppHeader from "components/IndexPage/AppHeader.vue";
+import SliderSection from "components/IndexPage/SliderSection.vue"
 const todos = ref<Todo[]>([
   {
     id: 1,

@@ -1,2 +1,11 @@
 // app global css in SCSS form
 
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: lighthaus;
+  src: url('./fonts/Lighthaus.woff');
+  font-weight: normal;
+}

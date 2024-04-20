@@ -1,45 +1,46 @@
 <template>
-    <PageComponent>
-      <app-header />
-      <MainComponent />
-      <SliderSection />
-    </PageComponent>
+  <PageComponent>
+    <app-header />
+    <MainComponent>
+      <q-btn
+        icon="expand_more"
+        flat
+        color="white"
+        round
+        size="lg"
+        class="test"
+        @click="scrollToSliderSection"
+      />
+    </MainComponent>
+    <SliderSection ref="sliderSection" />
+  </PageComponent>
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'components/models';
+import PageComponent from 'components/PageComponent.vue';
+import MainComponent from 'components/IndexPage/MainComponent.vue';
+import AppHeader from 'components/IndexPage/AppHeader.vue';
+import SliderSection from 'components/IndexPage/SliderSection.vue';
 import { ref } from 'vue';
-import PageComponent  from "components/PageComponent.vue";
-import MainComponent from "components/IndexPage/MainComponent.vue";
-import AppHeader from "components/IndexPage/AppHeader.vue";
-import SliderSection from "components/IndexPage/SliderSection.vue"
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+
+const sliderSection = ref<InstanceType<typeof SliderSection>>();
+
+function scrollToSliderSection() {
+  const offsetTop = sliderSection.value?.$el.offsetTop;
+  window.scrollTo({
+    top: offsetTop - 40,
+    behavior: 'smooth',
+  });
+}
 </script>
 
 <style scoped>
-
+.test {
+  position: absolute;
+  z-index: 99;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #ccc;
+}
 </style>

@@ -1,81 +1,48 @@
 <template>
   <div class="header">
-      <q-tabs
-        inline-label
-        class="text-white shadow-2"
-      >
-      <div class="tabs-wrapper" ref="test" style="width: 100%;">
+    <q-tabs inline-label class="text-white shadow-2">
+      <div class="tabs-wrapper" ref="test" style="width: 100%">
         <menu-icon
           @click="switchActive"
           :active="menuActive"
           class="menu-icon"
         />
-        <q-tab
-          name="home"
-          icon="home"
-          label="Главная"
-          class="first-tab"
-        />
-        <q-tab
-          label="Войти"
-          icon="login"
-          name="login"
-          class="tab-login"
-        />
-        <q-tab
-          name="charter"
-          icon="book"
-          label="Устав"
-        />
-        <q-tab
-          name="meet"
-          icon="group"
-          label="Собрание"
-        />
-        <q-tab
-          name="policy"
-          icon="policy"
-          label="Исполнительные органы"
-        />
-        <q-tab
-          name="documents"
-          icon="description"
-          label="Документы"
-        />
-        <q-tab
-          name="reactions"
-          icon="add_reaction"
-          label="Мнения"
-        />
+        <q-tab name="home" icon="home" label="Главная" class="first-tab" />
+        <q-tab label="Войти" icon="login" name="login" class="tab-login" />
+        <q-tab name="charter" icon="book" label="Устав" />
+        <q-tab name="meet" icon="group" label="Собрание" />
+        <q-tab name="policy" icon="policy" label="Исполнительные органы" />
+        <q-tab name="documents" icon="description" label="Документы" />
+        <q-tab name="reactions" icon="add_reaction" label="Мнения" />
       </div>
-      </q-tabs>
+    </q-tabs>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { ref, watch } from "vue";
-  import MenuIcon from "./MenuIcon.vue";
+import { ref, watch } from 'vue';
+import MenuIcon from './MenuIcon.vue';
 
-  const test = ref(null);
-  const menuActive = ref(false);
-
-  function switchActive():void {
-    menuActive.value = !menuActive.value;
-  }
-  watch(menuActive, (value, oldValue)=>{
-    if (value && test.value != null) {
-      console.log(test.value)
-      test.value.style.maxHeight = test.value.scrollHeight + 'px';
-    } else {
+const test = ref<HTMLElement>();
+const menuActive = ref(false);
+function switchActive(): void {
+  menuActive.value = !menuActive.value;
+}
+watch(menuActive, (value: boolean) => {
+  if (value && test.value) {
+    test.value.style.maxHeight = test.value.scrollHeight + 'px';
+  } else {
+    if (test.value) {
       test.value.style.maxHeight = '50px';
     }
-  })
+  }
+});
 </script>
 
 <style>
 .header {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   color: white;
   right: 0;
@@ -97,7 +64,7 @@
   flex-wrap: wrap;
   width: 100%;
   overflow: hidden;
-  transition: max-height .35s ease;
+  transition: max-height 0.35s ease;
 }
 
 .menu-icon {
@@ -130,5 +97,4 @@
     right: unset;
   }
 }
-
 </style>

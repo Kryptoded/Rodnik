@@ -1,6 +1,9 @@
-/*# sourceMappingURL=app.css.map */
+html {
+  scroll-behavior: smooth;
+}
 
 @font-face {
   font-family: lighthaus;
-  src: url('../assets/lighthaus.otf');
-}
+  src: url("./fonts/Lighthaus.woff");
+  font-weight: normal;
+}/*# sourceMappingURL=app.css.map */
